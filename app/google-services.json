@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "563980448081",
+    "firebase_url": "https://chatapp-ddbcc.firebaseio.com",
+    "project_id": "chatapp-ddbcc",
+    "storage_bucket": "chatapp-ddbcc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:563980448081:android:e1e763363e01dac1fbe370",
+        "android_client_info": {
+          "package_name": "com.lakhan.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "563980448081-82uos2dlnbq84f99gfk5lfgoavp5p1n8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lakhan.chatapp",
+            "certificate_hash": "028d893b96fd467072e6794b2ec46a5cebd99029"
+          }
+        },
+        {
+          "client_id": "563980448081-v08pf8o4t1nhrrnhi3tv56e2k2kpvrvf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwKf0fVoadzlG7s7H3ZaWzlBSbVRQ9nMM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "563980448081-v08pf8o4t1nhrrnhi3tv56e2k2kpvrvf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
