@@ -60,15 +60,19 @@ public class RegisterActivity extends AppCompatActivity {
                 } else if (txt_password.length() < 6 ){
                     Toast.makeText(RegisterActivity.this, "password must be at least 6 characters", Toast.LENGTH_SHORT).show();
                 } else {
+                    username.setEnabled(false);
+                    email.setEnabled(false);
+                    password.setEnabled(false);
+                    btn_register.setEnabled(false);
                     register(txt_username, txt_email, txt_password);
                 }
             }
         });
     }
 
-    private void register(final String username, String email, String password){
+    private void register(final String txt_username, String txt_email, String txt_password){
 
-        auth.createUserWithEmailAndPassword(email, password)
+        auth.createUserWithEmailAndPassword(txt_email, txt_password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -81,10 +85,10 @@ public class RegisterActivity extends AppCompatActivity {
 
                             HashMap<String, String> hashMap = new HashMap<>();
                             hashMap.put("id", userid);
-                            hashMap.put("username", username);
+                            hashMap.put("username", txt_username);
                             hashMap.put("imageURL", "default");
                             hashMap.put("status", "offline");
-                            hashMap.put("search", username.toLowerCase());
+                            hashMap.put("search", txt_username.toLowerCase());
 
                             reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
@@ -100,6 +104,10 @@ public class RegisterActivity extends AppCompatActivity {
                         } else {
                             Toast.makeText(RegisterActivity.this, "You can't register with this email or password", Toast.LENGTH_SHORT).show();
                         }
+                        username.setEnabled(true);
+                        email.setEnabled(true);
+                        password.setEnabled(true);
+                        btn_register.setEnabled(true);
                     }
                 });
     }

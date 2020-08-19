@@ -59,6 +59,9 @@ public class LoginActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)){
                     Toast.makeText(LoginActivity.this, "All fileds are required", Toast.LENGTH_SHORT).show();
                 } else {
+                    email.setEnabled(false);
+                    password.setEnabled(false);
+                    btn_login.setEnabled(false);
 
                     auth.signInWithEmailAndPassword(txt_email, txt_password)
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -72,6 +75,9 @@ public class LoginActivity extends AppCompatActivity {
                                     } else {
                                         Toast.makeText(LoginActivity.this, "Authentication failed!", Toast.LENGTH_SHORT).show();
                                     }
+                                    email.setEnabled(true);
+                                    password.setEnabled(true);
+                                    btn_login.setEnabled(true);
                                 }
                             });
                 }
